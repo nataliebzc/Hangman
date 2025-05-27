@@ -65,8 +65,6 @@ WORDS = ["python", "hangman", "challenge", "programming", "computer", "customtki
 
 
 class HangmanGame(ctk.CTk):
-    """CustomTkinter-based Hangman game."""
-
     def __init__(self) -> None:
         super().__init__()
         self.title("Hangman")
