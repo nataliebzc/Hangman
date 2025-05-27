@@ -146,7 +146,7 @@ class HangmanGame(ctk.CTk):
     def _update_stage(self):
         self.stage_label.configure(text=STAGES[self.tries])
         self.info_label.configure(text=f"Tries left: {self.tries}")
-        self.guessed_label.configure(text=f"Guessed false letters: {', '.join(sorted(self.guessed_letters))}")
+        self.guessed_label.configure(text=f"Guessed letters: {', '.join(sorted(self.guessed_letters))}")
         if self.tries <= 0:
             self._end_game(won=False)
 
@@ -188,7 +188,7 @@ class HangmanGame(ctk.CTk):
         self.stage_label.configure(text=STAGES[-1])
         self._update_word_label()
         self.info_label.configure(text=f"Tries left: {self.tries}")
-        self.guessed_label.configure(text="Guessed false letters:")
+        self.guessed_label.configure(text="Guessed letters:")
         self.guess_button.configure(state="normal")
         self.replay_button.configure(state="disabled")
         self.entry.focus()
