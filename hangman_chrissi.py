@@ -61,7 +61,7 @@ STAGES = [
     """,
 ]
 
-WORDS = ["python", "hangman", "challenge", "programming", "computer"]
+WORDS = ["python", "hangman", "challenge", "programming", "computer", "customtkinter", "game", "development", "interface", "functionality"]
 
 
 class HangmanGame(ctk.CTk):
@@ -140,6 +140,9 @@ class HangmanGame(ctk.CTk):
         self.replay_button = ctk.CTkButton(button_frame, text="Play Again", command=self._play_again, state="disabled")
         self.replay_button.grid(row=0, column=1, padx=10)
 
+        self.close_button = ctk.CTkButton(button_frame, text="Close", command=self._close)
+        self.close_button.grid(row=0, column=2, padx=10)
+
         self.guessed_label = ctk.CTkLabel(self, text="Guessed letters:", font=("Helvetica", 10))
         self.guessed_label.pack(pady=5)
 
@@ -192,6 +195,10 @@ class HangmanGame(ctk.CTk):
         self.guess_button.configure(state="normal")
         self.replay_button.configure(state="disabled")
         self.entry.focus()
+
+    def _close(self):
+        if messagebox.askokcancel("Quit", "Do you want to quit the game?"):
+            self.destroy()
 
 
 if __name__ == "__main__":
